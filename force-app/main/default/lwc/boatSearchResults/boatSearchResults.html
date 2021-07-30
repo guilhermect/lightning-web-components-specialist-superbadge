@@ -1,0 +1,24 @@
+<template>
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="Gallery">
+          <div class="slds-scrollable_y">
+            <lightning-layout horizontal-align="center" multiple-rows="true">
+              <template if:true={boats}>
+                <template for:each={boats} for:item="boat">
+                  <lightning-layout-item key={boat.Id}>
+                     <!-- Each BoatTile goes here -->
+                     {boat.Name}
+                  </lightning-layout-item>
+                </template>
+              </template>
+            </lightning-layout>
+          </div>
+        </lightning-tab>
+        <lightning-tab label="Boat Editor">
+          <!-- Scrollable div and lightning datatable go here -->
+        </lightning-tab>
+         <lightning-tab label="Boats Near Me">
+          <!-- boatsNearMe component goes here -->
+        </lightning-tab>
+    </lightning-tabset>
+</template>

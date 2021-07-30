@@ -1,8 +1,9 @@
 // imports
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class BoatSearch extends LightningElement {
     isLoading = false;
+    @api boatTypeId = '';
     
     // Handles loading event
     handleLoading() { }
@@ -12,7 +13,9 @@ export default class BoatSearch extends LightningElement {
     
     // Handles search boat event
     // This custom event comes from the form
-    searchBoats(event) { }
+    searchBoats(event) { 
+       this.boatTypeId = event.detail.boatTypeId;
+    }
     
     createNewBoat() { }
 }
