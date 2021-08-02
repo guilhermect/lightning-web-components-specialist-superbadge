@@ -21,7 +21,6 @@ export default class BoatTile extends LightningElement {
     // Fires event with the Id of the boat that has been selected.
     selectBoat() {
       this.selectedBoatId = this.selectedBoatId === '' ? this.boat.Id : '';
-
       const selectBoatEvent = new CustomEvent('boatselect', {
         detail: {
           boatId: this.selectedBoatId

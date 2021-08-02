@@ -6,9 +6,12 @@
               <template if:true={boats}>
                 <template for:each={boats} for:item="boat">
                   <lightning-layout-item 
-                    key={boat.Id} 
-                    class="slds-p-around_small slds-size_6-of-12 slds-size_4-of-12 slds-size_3-of-12">
-                    <c-boat-tile boat={boat} onboatselect={updateSelectedTile}></c-boat-tile>
+                    class="slds-p-around_small slds-size_6-of-12 slds-size_4-of-12 slds-size_3-of-12"
+                    key={boat.Id}>
+                    <c-boat-tile 
+                      boat={boat} 
+                      onboatselect={updateSelectedTile}>
+                    </c-boat-tile>
                   </lightning-layout-item>
                 </template>
               </template>
