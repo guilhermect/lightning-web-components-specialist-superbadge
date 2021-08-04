@@ -6,13 +6,15 @@ export default class BoatSearch extends LightningElement {
     @api boatTypeId = '';
     
     // Handles loading event
-    handleLoading() { }
+    handleLoading() {
+        this.isLoading = true;
+    }
     
     // Handles done loading event
-    handleDoneLoading() { }
+    handleDoneLoading() {
+        this.isLoading = false;
+    }
     
-    // Handles search boat event
-    // This custom event comes from the form
     searchBoats(event) { 
        this.boatTypeId = event.detail.boatTypeId;
     }

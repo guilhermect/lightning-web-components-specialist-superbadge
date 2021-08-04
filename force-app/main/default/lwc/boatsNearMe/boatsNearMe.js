@@ -47,7 +47,6 @@ export default class BoatsNearMe extends LightningElement {
     }
 
     createMapMarkers(boatData) {
-        console.log(`typeof => ${typeof boatData}`);
         const newMarkers = JSON.parse(boatData).map(boat => ({
             title : boat.Name,
             location : {
