@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import BOATMC from "@salesforce/messageChannel/BoatMessageChannel__c";
 import { MessageContext, subscribe, APPLICATION_SCOPE } from 'lightning/messageService';
@@ -21,7 +21,7 @@ import BOAT_ID_FIELD from '@salesforce/schema/Boat__c.Id';
 import BOAT_NAME_FIELD from '@salesforce/schema/Boat__c.Name';
 const BOAT_FIELDS = [BOAT_ID_FIELD, BOAT_NAME_FIELD];
 export default class BoatDetailTabs extends NavigationMixin(LightningElement) {
-  boatId;
+  @api boatId;
   wiredRecord;
   label = {
     labelDetails,
@@ -81,7 +81,9 @@ export default class BoatDetailTabs extends NavigationMixin(LightningElement) {
   }
   
   // Navigates back to the review list, and refreshes reviews component
-  handleReviewCreated() { }
+  handleReviewCreated() {
+    this.template.querySelector('lightning-tabset').activeTabValue = 'reviews'; 
+  }
 }
 
 
