@@ -67,7 +67,7 @@ public with sharing class BoatDataService {
         return [SELECT Name, Id FROM BoatType__c WITH SECURITY_ENFORCED ORDER BY Name];
     }
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=false)
     public static List<BoatReview__c> getAllReviews(Id boatId) {
         return [
             SELECT
@@ -77,6 +77,7 @@ public with sharing class BoatDataService {
                 Rating__c,
                 LastModifiedDate,
                 CreatedDate,
+                CreatedBy.Id,
                 CreatedBy.Name,
                 CreatedBy.SmallPhotoUrl,
                 CreatedBy.CompanyName
