@@ -13,8 +13,9 @@
             <lightning-tabset variant="scoped">
                 <lightning-tab label={label.labelDetails}>
                     <lightning-card title={boatName} icon-name={detailsTabIconName}>
-                        <div slot="actions">
-                            <lightning-button 
+                        <div>
+                            <lightning-button
+                                slot="actions" 
                                 label={label.labelFullDetails} 
                                 onclick={navigateToRecordViewPage}>
                             </lightning-button>
